@@ -1,4 +1,5 @@
 export enum ROUTES{
     login = "/",
-    resgisteUser = "/registerUser"
+    resgisteUser = "/registerUser",
+    market = "/market"
 }

@@ -10,6 +10,10 @@ const nextConfig = {
                 source:"/registerUser",
                 destination:'/registerUser'
             },
+            {
+                source:"/market",
+                destination:"/market"
+            }
         ]
     }
 };

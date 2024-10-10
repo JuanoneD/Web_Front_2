@@ -3,11 +3,14 @@
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import {ROUTES} from "@/app/constants/routes"
+import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
     const [login,setLogin] = useState<string>("")
     const [password,setPassword] = useState<string>("")
     const [error,setError] = useState<boolean>(false)
+    const router = useRouter()
 
     const MakeLogin = async () => {
         try{
@@ -25,6 +28,7 @@ export default function Home() {
           localStorage.setItem("Token",result.Token)
           console.log(localStorage.getItem("Token"));
           setError(false)
+          router.push("/market")
         }catch(err){
           setError(true)
         }
