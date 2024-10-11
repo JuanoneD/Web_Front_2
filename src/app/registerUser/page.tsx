@@ -3,14 +3,14 @@
 import { useState} from "react";
 import {ROUTES} from "@/app/constants/routes"
 import Link from "next/link";
-import { useRouter } from "next/router";
-
+import {useRouter} from 'next/navigation'
 
 export default function Home() {
     const [login,setLogin] = useState<string>("")
     const [password,setPassword] = useState<string>("")
     const [date,setDate] = useState<string>("")
     const [error,setError] = useState<boolean>(false)
+    const router = useRouter()
 
     const RegisterUser = async () => {
         try{
@@ -30,7 +30,8 @@ export default function Home() {
               setError(true)
             }else{
                 setError(false)
-                window.location.href = ROUTES.login;  
+                window.location.href = ROUTES.login;
+                router.push(ROUTES.login)
 
             }
             console.log(result)

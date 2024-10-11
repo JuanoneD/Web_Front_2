@@ -29,6 +29,11 @@ const Market = async ()=>{
                                     </p>
                                 </div>
                                 <div className="flex justify-center">
+                                    <p className="flex items-center text-center p-1">
+                                        {item.price}
+                                    </p>
+                                </div>
+                                <div className="flex justify-center">
                                     <BtBuy idProduct={item.id.toString()}/>
                                 </div>
                             </div>
