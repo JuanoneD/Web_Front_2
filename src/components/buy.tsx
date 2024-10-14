@@ -31,7 +31,7 @@ export const BtBuy = ({idProduct}:{idProduct:string})=>{
     }
     return(
         <>
-            <button onClick={()=>{buy()}}>Comprar</button>
+          <button className="w-2/3 bg-black text-white rounded-[20px] p-2 m-2" onClick={()=>{buy()}}>Comprar</button>
         </>
     )
 }

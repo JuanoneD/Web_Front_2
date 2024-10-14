@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { ROUTES } from "../constants/routes"
+import Image from "next/image"
 
+import templete from '@/img/Acer_Wallpaper_03_3840x2400.jpg'
 
 interface IData{
     currentCart:{
@@ -56,7 +58,23 @@ const Cart = ()=>{
             </div>
             <div>
                 <p>Preco Total:{data?.currentCart.totalPrice}</p>
-
+            </div>
+            <div>
+                <div>
+                <p>Produtos:</p>
+                </div>
+                <div>
+                    {data?.allProducts.map((item)=>{
+                        return(
+                            <div key={item.id}>
+                                <Image src={templete} alt=""/>
+                                <p>nome:{item.Product.name}</p>
+                                <p>Quantidade:{item.quantity}</p>
+                                <p>Preco:{item.price}</p>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
 
         </div>

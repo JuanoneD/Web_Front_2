@@ -3,7 +3,7 @@ const nextConfig = {
     rewrites:()=>{
         return[
             {
-                source:"/",
+                source:"/login",
                 destination:"/login"
             },
             {
@@ -11,8 +11,12 @@ const nextConfig = {
                 destination:'/registerUser'
             },
             {
-                source:"/market",
+                source:"/",
                 destination:"/market"
+            },
+            {
+                source:"/cart",
+                destination:"/cart"
             }
         ]
     }

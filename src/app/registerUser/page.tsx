@@ -42,16 +42,16 @@ export default function Home() {
       
     return (
       <div  className=" flex justify-center aling-center mt-6 mb-6">
-        <div className="flex flex-col bg-cyan-700 p-6 rounded-md w-2/3">
+        <div className="flex flex-col  p-6 rounded-md w-2/3 md:w-1/3">
           <Link href={ROUTES.login}>⬅️</Link>
-          <label htmlFor="login" className="text-white text-medium">Email:</label>
-          <input type="text" name="login" placeholder="Digite seu email" className="p-1 text-small text-black" value={login} onChange={(e)=>{setLogin(e.target.value)}} />
-          <label htmlFor="password" className="text-white text-medium">Senha:</label>
-          <input type="text" name="password" placeholder="Digite sua senha" className="p-1 text-small text-black" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-          <label htmlFor="date" className="text-white text-medium">Data Nascimento:</label>
-          <input type="date" name="date" className="p-1 text-small text-black" value={date} onChange={(e)=>{setDate(e.target.value)}}/>
+          <label htmlFor="login" className="text-black text-medium">Email:</label>
+          <input type="text" name="login" placeholder="Digite seu email" className="p-2 text-small text-black border-2" value={login} onChange={(e)=>{setLogin(e.target.value)}} />
+          <label htmlFor="password" className="text-black text-medium">Senha:</label>
+          <input type="text" name="password" placeholder="Digite sua senha" className="p-2 text-small text-black border-2" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+          <label htmlFor="date" className="text-black text-medium mt-2">Data Nascimento:</label>
+          <input type="date" name="date" className="p-2 text-small text-black border-2" value={date} onChange={(e)=>{setDate(e.target.value)}}/>
           {error&&<div className="text-red-100">Dados incorretos!!</div>}
-          <button type="submit" className="bg-white mt-6 rounded-md text-black" onClick={()=>{RegisterUser()}}>Criar Conta</button>
+          <button type="submit" className="bg-black mt-6 rounded-md text-white p-2" onClick={()=>{RegisterUser()}}>Criar Conta</button>
         </div>
       </div>
   );

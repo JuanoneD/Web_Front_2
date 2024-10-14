@@ -36,14 +36,14 @@ export default function Home() {
       
     return (
       <div  className=" flex justify-center aling-center mt-6 mb-6">
-        <div className="flex flex-col bg-cyan-700 p-6 rounded-md w-2/3">
-          <label htmlFor="login" className="text-white text-medium">Email:</label>
-          <input type="text" name="login" placeholder="Digite seu login" className="p-1 text-small text-black" value={login} onChange={(e)=>{setLogin(e.target.value)}} />
-          <label htmlFor="password" className="text-white text-medium">Senha:</label>
-          <input type="text" name="password" placeholder="Digite sua senha" className="p-1 text-small text-black" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-          {error&&<div className="text-red-100">Senha ou email incorreto!!</div>}
-          <button type="submit" className="bg-white mt-6 rounded-md text-black" onClick={()=>{MakeLogin()}}>Login</button>
-          <Link href={ROUTES.resgisteUser} className="text-white mt-2">Criar Conta!</Link>
+        <div className="flex flex-col p-6 rounded-md w-4/5 md:w-1/3">
+          <label htmlFor="login" className="text-black text-medium">Email:</label>
+          <input type="text" name="login" placeholder="Digite seu login" className="p-2 border-2 text-small text-black" value={login} onChange={(e)=>{setLogin(e.target.value)}} />
+          <label htmlFor="password" className="text-black text-medium">Senha:</label>
+          <input type="text" name="password" placeholder="Digite sua senha" className="p-2 text-small text-black border-2" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+          {error&&<div className="text-red-950">Senha ou email incorreto!!</div>}
+          <button type="submit" className="bg-black mt-6 rounded-[10px] text-white p-3" onClick={()=>{MakeLogin()}}>Login</button>
+          <Link href={ROUTES.resgisteUser} className="text-black mt-2 text-center">Criar Conta!</Link>
         </div>
       </div>
   );
