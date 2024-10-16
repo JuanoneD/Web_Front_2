@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 export const BtBuy = ({idProduct}:{idProduct:string})=>{
   const router = useRouter();
     const buy= async()=>{
-        if(!localStorage.getItem("Token")){
+        if(!sessionStorage.getItem("Token")){
           router.push(ROUTES.login)
         }
         try{
@@ -13,7 +13,7 @@ export const BtBuy = ({idProduct}:{idProduct:string})=>{
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'authorization': `${localStorage.getItem("Token")}`
+                'authorization': `${sessionStorage.getItem("Token")}`
               },
               body: JSON.stringify({
                 IdProduct:idProduct,
