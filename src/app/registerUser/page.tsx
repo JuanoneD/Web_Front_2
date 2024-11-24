@@ -45,7 +45,7 @@ export default function Home() {
       <>
         <Menu rigthMenu={false}/>
         <div  className=" flex justify-center aling-center mt-6 mb-6">
-          <div className="flex flex-col  p-6 rounded-md w-2/3 md:w-1/3">
+          <div className="flex flex-col  p-6 rounded-md w-5/6 md:w-1/3">
             <Link href={ROUTES.login}>⬅️</Link>
             <label htmlFor="login" className="text-black text-medium">Email:</label>
             <input type="text" name="login" placeholder="Digite seu email" className="p-2 text-small text-black border-2" value={login} onChange={(e)=>{setLogin(e.target.value)}} />
