@@ -3,5 +3,6 @@ export enum ROUTES{
     resgisteUser = "/registerUser",
     market = "/",
     cart = "/cart",
-    registerProduct = "/registerProduct"
+    registerProduct = "/registerProduct",
+    updateProduct = "/updateProduct"
 }

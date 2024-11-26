@@ -14,8 +14,14 @@ type IData = {
 
 
 const Market = async ()=>{
-    const res = await fetch("http://localhost:8080/products/")
-    const data:IData[] = await res.json()
+    var data:IData[] = []
+
+    try {
+        const res = await fetch("http://localhost:8080/products/")
+        data = await res.json()
+    } catch (error) {
+        data = [{"id":0,"name":"ERRO AO CARREGAR PRODUTOS","description":"ERROR","price":0,"stock":0}]
+    }
     return(
         <>
             <Menu rigthMenu={true}/>
