@@ -6,7 +6,9 @@ import logo from '@/img/growth.png'
 import cart from '@/img/shopping-cart (1).png'
 import more from '@/img/mais.png'
 import pen from '@/img/lapis.png'
+import sup from '@/img/for.png'
 import Link from "next/link"
+
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 
@@ -55,6 +57,9 @@ export const Menu = ({rigthMenu}:{rigthMenu:boolean})=>{
                 {rigthMenu && login &&
                 <>
                         <div className="flex items-center">
+                            <Link href={ROUTES.suppliers} className="m-1">
+                                <Image src={sup} alt="" className="h-10 w-auto " priority={true}/>
+                            </Link>
                             <Link href={ROUTES.updateProduct} className="m-1">
                                 <Image src={pen} alt="" className="h-10 w-auto " priority={true}/>
                             </Link>
