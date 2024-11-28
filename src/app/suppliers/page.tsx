@@ -9,8 +9,8 @@ import { Menu } from "@/components/menu";
 
 const  suppliers =  ()=> {
     const [error,setError] = useState<boolean>(false)
+    const [data,setData] = useState<{name:String,id:Number}[]>([]);
     const router = useRouter()
-    var data:{name:String,id:Number}[] = []
 
     useEffect(()=>{
         async function loadData(){
@@ -22,12 +22,14 @@ const  suppliers =  ()=> {
                         'authorization': `${sessionStorage.getItem("Token")}`
                     },
                 })
-                data = await res.json()
+                let respJson = await res.json()
+                console.log(respJson)
+                setData(respJson)
             } catch (error) {
-                data = [{"id":0,"name":"ERRO AO CARREGAR PRODUTOS"}]
+                setData([{"id":0,"name":"ERRO AO CARREGAR PRODUTOS"}])
             } 
         }
-        loadData
+        loadData()
     },[])
 
     
